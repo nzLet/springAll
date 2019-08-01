@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>日志列表</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/style.css}"  type="text/css">
+</head>
+<body>
+<table>
+    <tr>
+
+        <th>#</th>
+        <th>username</th>
+        <th>operation</th>
+        <th>time</th>
+        <th>method</th>
+        <th>params</th>
+        <th>ip</th>
+    </tr>
+    <tr th:each="list,stat : ${logs}">
+        <td th:text="${stat.count}"></td>
+        <td th:text="${list.username}"></td>
+        <td th:text="${list.operation}"></td>
+        <td th:text="${list.time}"></td>
+        <td th:text="${list.method}"></td>
+        <td th:text="${list.params}"></td>
+        <td th:text="${list.ip}"></td>
+    </tr>
+</table>
+</body>
+</html>

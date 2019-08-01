@@ -1,0 +1,142 @@
+#配置服务器端口
+server:
+  port: 8081
+  servlet:
+    context-path: /
+#自定义属性
+org.nz.blog:
+  name: NZ's Blog
+  title: Spring Boot
+#配置Druid数据源
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springdemo?useUnicode=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&characterEncoding=UTF-8
+    username: root
+    password: x5
+    #数据库访问配置, 使用druid数据源
+    druid:
+      # 连接池配置
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      #连接等待超时时间
+      max-wait: 30000
+      # 配置检测可以关闭的空闲连接间隔时间
+      time-between-eviction-runs-millis: 60000
+      #配置连接在池中的最小生存时间
+      min-evictable-idle-time-millis: 300000
+      validation-query: select '1' from dual
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      #打开PSCache，并且指定每个连接上PSCache的大小
+      pool-prepared-statements: true
+      max-open-prepared-statements: 20
+      max-pool-prepared-statement-per-connection-size: 20
+      # 配置监控统计拦截的filters, 去掉后监控界面sql无法统计, 'wall'用于防火墙
+      filters: stat,wall
+      # Spring监控AOP切入点，如x.y.z.service.*,配置多个英文逗号分隔
+      # WebStatFilter配置
+      web-stat-filter:
+        enabled: true
+        # 添加过滤规则
+        url-pattern: /*
+        # 忽略过滤的格式
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+
+      # StatViewServlet配置
+      stat-view-servlet:
+        enabled: true
+        # 访问路径为/druid时，跳转到StatViewServlet
+        # 是否能够重置数据
+        reset-enable: false
+        # 需要账号密码才能访问控制台
+        login-username: root
+        login-password: root
+        # IP白名单
+        # allow: 127.0.0.1
+        #　IP黑名单（共同存在时，deny优先于allow）
+        # deny: 192.168.1.218
+        url-pattern: /druid/*
+
+        # 配置StatFilter
+        filter:
+          stat:
+            log-slow-sql: true
+  #thymeleaf配置
+  thymeleaf:
+    #开启模板缓存
+    cache: false
+  #Redis配置
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+    #连接超时时间（毫秒）
+    timeout: 5000
+  # 邮件设置
+  mail:
+    host: smtp.163.com
+    username: HuYanan099@163.com
+    password: hu123456
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+#ehcache
+# cache:
+#    ehcache:
+#      config: classpath:ehcache.xml
+
+#    #在呈现模板之前，检查模板是否存在。
+#    check-template: true
+#    #检查模板位置是否正确（默认值:true）
+#    check-template-location: true
+#    #Content-Type的值（默认值：text/html）
+#    content-type: text/html
+#    #开启MVC Thymeleaf视图解析（默认值：true）
+#    enabled: true
+#    #模板编码
+#    encoding: UTF-8
+#    #要被排除在解析之外的视图名称列表，用逗号分隔
+#    excluded-view-names:
+#    #要运用于模板之上的模板模式。另见StandardTemplate-ModeHandlers(默认值：HTML5)
+#    mode: HTML5
+#    #在构建URL时添加到视图名称前的前缀（默认值：classpath:/templates/）
+#    prefix: classpath:/templates/
+#    #在构建URL时添加到视图名称后的后缀（默认值：.html）
+#    suffix: .html
+#    #Thymeleaf模板解析器在解析器链中的顺序。默认情况下，它排第一位。顺序从1开始，只有在定义了额外的TemplateResolver Bean时才需要设置这个属性。
+#    template-resolver-order:
+#    #可解析的视图名称列表，用逗号分隔
+#    view-names:
+#mybatis配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+#配置日志
+logging:
+  level:
+    org:
+      nz:
+        springall_start_demo:
+          mapper: debug
+management:
+  server:
+    port: 8081
+  endpoints:
+    web:
+      exposure:
+        include: '*'

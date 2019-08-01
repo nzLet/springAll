@@ -1,0 +1,31 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.nz.springall_start_demo.mapper.StudentMapper">
+    <resultMap id="StudentMap" type="org.nz.springall_start_demo.pojo.Student">
+        <id property="sno" column="sno"></id>
+        <result property="sname" column="sname"></result>
+        <result property="ssex" column="ssex"></result>
+    </resultMap>
+    <sql id="baseSql">
+        sno,sname,ssex
+
+    </sql>
+    <select id="queryStudentById" parameterType="String" resultMap="StudentMap">
+        select <include refid="baseSql"/>
+        from student 
+        where sno = #{sno}
+        
+    </select>
+    <select id="queryStudents" resultMap="StudentMap">
+        select <include refid="baseSql"/>
+        from student
+    </select>
+    <insert id="insert" parameterType="org.nz.springall_start_demo.pojo.Student">
+        insert into student values(#{sno},#{sname},#{ssex})
+    </insert>
+    <update id="update" parameterType="org.nz.springall_start_demo.pojo.Student">
+        update student set sname=#{sname},ssex=#{ssex} where sno=#{sno}
+    </update>
+    <delete id="delete" parameterType="String">
+        delete from student where sno=#{sno}
+    </delete>
+</mapper>

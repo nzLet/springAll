@@ -1,0 +1,12 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.nz.springall_start_demo.mapper.SyslogMapper">
+
+    <insert id="saveSysLog" parameterType="org.nz.springall_start_demo.pojo.Syslog">
+        insert into sys_log(id,username,operation,time,method,params,ip,create_time)
+        values (#{id},#{username},#{operation},#{time},#{method},#{params},#{ip},#{createTime})
+
+    </insert>
+    <select id="queryAllLogs" resultType="org.nz.springall_start_demo.pojo.Syslog">
+        select * from sys_log
+    </select>
+</mapper>
