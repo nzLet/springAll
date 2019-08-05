@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.nz</groupId>
-    <artifactId>springall_start_demo</artifactId>
+    <artifactId>admin-client</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springall_start_demo</name>
+    <name>admin-client</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -37,9 +37,9 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency><dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-aop</artifactId>
+    </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-json</artifactId>
@@ -127,7 +127,6 @@
             <artifactId>spring-boot-admin-starter-client</artifactId>
             <version>2.1.6</version>
         </dependency>
-
         <!--添加热部署-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
