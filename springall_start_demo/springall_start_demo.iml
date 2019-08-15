@@ -159,6 +159,8 @@
     <orderEntry type="library" name="Maven: de.codecentric:spring-boot-admin-client:2.1.6" level="project" />
     <orderEntry type="library" name="Maven: org.jolokia:jolokia-core:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.10.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.9" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-devtools:2.1.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:2.1.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.xmlunit:xmlunit-core:2.6.2" level="project" />
