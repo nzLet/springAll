@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.nz.springall_start_demo.mapper.ApplyMapper">
+  <resultMap id="BaseResultMap" type="org.nz.springall_start_demo.pojo.Apply">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="serial_number" jdbcType="VARCHAR" property="serialNumber" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="estimated_cost" jdbcType="DECIMAL" property="estimatedCost" />
+    <result column="purchase_details" jdbcType="VARCHAR" property="purchaseDetails" />
+    <result column="planning_type" jdbcType="VARCHAR" property="planningType" />
+    <result column="planning_remark" jdbcType="VARCHAR" property="planningRemark" />
+    <result column="purchase_method" jdbcType="VARCHAR" property="purchaseMethod" />
+    <result column="apply_rela_supplier" jdbcType="VARCHAR" property="applyRelaSupplier" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="is_framework" jdbcType="INTEGER" property="isFramework" />
+    <result column="apply_status" jdbcType="INTEGER" property="applyStatus" />
+    <result column="delete_flag" jdbcType="INTEGER" property="deleteFlag" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="org.nz.springall_start_demo.pojo.Apply">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="attachment" jdbcType="LONGVARCHAR" property="attachment" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, version, serial_number, name, type, estimated_cost, purchase_details, planning_type, 
+    planning_remark, purchase_method, apply_rela_supplier, remark, is_framework, apply_status, 
+    delete_flag
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    attachment
+  </sql>
+</mapper>

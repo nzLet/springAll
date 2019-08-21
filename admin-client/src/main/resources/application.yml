@@ -12,53 +12,53 @@ spring:
     url: jdbc:mysql://localhost:3306/springdemo?useUnicode=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&characterEncoding=UTF-8
     username: root
     password: x5
-    #Êı¾İ¿â·ÃÎÊÅäÖÃ, Ê¹ÓÃdruidÊı¾İÔ´
+    #æ•°æ®åº“è®¿é—®é…ç½®, ä½¿ç”¨druidæ•°æ®æº
     druid:
-      # Á¬½Ó³ØÅäÖÃ
+      # è¿æ¥æ± é…ç½®
       initial-size: 5
       min-idle: 5
       max-active: 20
-      #Á¬½ÓµÈ´ı³¬Ê±Ê±¼ä
+      #è¿æ¥ç­‰å¾…è¶…æ—¶æ—¶é—´
       max-wait: 30000
-      # ÅäÖÃ¼ì²â¿ÉÒÔ¹Ø±ÕµÄ¿ÕÏĞÁ¬½Ó¼ä¸ôÊ±¼ä
+      # é…ç½®æ£€æµ‹å¯ä»¥å…³é—­çš„ç©ºé—²è¿æ¥é—´éš”æ—¶é—´
       time-between-eviction-runs-millis: 60000
-      #ÅäÖÃÁ¬½ÓÔÚ³ØÖĞµÄ×îĞ¡Éú´æÊ±¼ä
+      #é…ç½®è¿æ¥åœ¨æ± ä¸­çš„æœ€å°ç”Ÿå­˜æ—¶é—´
       min-evictable-idle-time-millis: 300000
       validation-query: select '1' from dual
       test-while-idle: true
       test-on-borrow: false
       test-on-return: false
-      #´ò¿ªPSCache£¬²¢ÇÒÖ¸¶¨Ã¿¸öÁ¬½ÓÉÏPSCacheµÄ´óĞ¡
+      #æ‰“å¼€PSCacheï¼Œå¹¶ä¸”æŒ‡å®šæ¯ä¸ªè¿æ¥ä¸ŠPSCacheçš„å¤§å°
       pool-prepared-statements: true
       max-open-prepared-statements: 20
       max-pool-prepared-statement-per-connection-size: 20
-      # ÅäÖÃ¼à¿ØÍ³¼ÆÀ¹½ØµÄfilters, È¥µôºó¼à¿Ø½çÃæsqlÎŞ·¨Í³¼Æ, 'wall'ÓÃÓÚ·À»ğÇ½
+      # é…ç½®ç›‘æ§ç»Ÿè®¡æ‹¦æˆªçš„filters, å»æ‰åç›‘æ§ç•Œé¢sqlæ— æ³•ç»Ÿè®¡, 'wall'ç”¨äºé˜²ç«å¢™
       filters: stat,wall
-      # Spring¼à¿ØAOPÇĞÈëµã£¬Èçx.y.z.service.*,ÅäÖÃ¶à¸öÓ¢ÎÄ¶ººÅ·Ö¸ô
-      # WebStatFilterÅäÖÃ
+      # Springç›‘æ§AOPåˆ‡å…¥ç‚¹ï¼Œå¦‚x.y.z.service.*,é…ç½®å¤šä¸ªè‹±æ–‡é€—å·åˆ†éš”
+      # WebStatFilteré…ç½®
       web-stat-filter:
         enabled: true
-        # Ìí¼Ó¹ıÂË¹æÔò
+        # æ·»åŠ è¿‡æ»¤è§„åˆ™
         url-pattern: /*
-        # ºöÂÔ¹ıÂËµÄ¸ñÊ½
+        # å¿½ç•¥è¿‡æ»¤çš„æ ¼å¼
         exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
 
-      # StatViewServletÅäÖÃ
+      # StatViewServleté…ç½®
       stat-view-servlet:
         enabled: true
-        # ·ÃÎÊÂ·¾¶Îª/druidÊ±£¬Ìø×ªµ½StatViewServlet
-        # ÊÇ·ñÄÜ¹»ÖØÖÃÊı¾İ
+        # è®¿é—®è·¯å¾„ä¸º/druidæ—¶ï¼Œè·³è½¬åˆ°StatViewServlet
+        # æ˜¯å¦èƒ½å¤Ÿé‡ç½®æ•°æ®
         reset-enable: false
-        # ĞèÒªÕËºÅÃÜÂë²ÅÄÜ·ÃÎÊ¿ØÖÆÌ¨
+        # éœ€è¦è´¦å·å¯†ç æ‰èƒ½è®¿é—®æ§åˆ¶å°
         login-username: root
         login-password: root
-        # IP°×Ãûµ¥
+        # IPç™½åå•
         # allow: 127.0.0.1
-        #¡¡IPºÚÃûµ¥£¨¹²Í¬´æÔÚÊ±£¬denyÓÅÏÈÓÚallow£©
+        #ã€€IPé»‘åå•ï¼ˆå…±åŒå­˜åœ¨æ—¶ï¼Œdenyä¼˜å…ˆäºallowï¼‰
         # deny: 192.168.1.218
         url-pattern: /druid/*
 
-        # ÅäÖÃStatFilter
+        # é…ç½®StatFilter
         filter:
           stat:
             log-slow-sql: true

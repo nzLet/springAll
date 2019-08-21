@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.nz.springall_start_demo.mapper.SoftwareApplyMapper">
+  <resultMap id="BaseResultMap" type="org.nz.springall_start_demo.pojo.SoftwareApply">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="serial_number" jdbcType="VARCHAR" property="serialNumber" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="software_category" jdbcType="VARCHAR" property="softwareCategory" />
+    <result column="planning_type" jdbcType="VARCHAR" property="planningType" />
+    <result column="planning_remark" jdbcType="VARCHAR" property="planningRemark" />
+    <result column="estimated_cost" jdbcType="VARCHAR" property="estimatedCost" />
+    <result column="realize_method" jdbcType="VARCHAR" property="realizeMethod" />
+    <result column="purchase_method" jdbcType="VARCHAR" property="purchaseMethod" />
+    <result column="purchase_details" jdbcType="VARCHAR" property="purchaseDetails" />
+    <result column="apply_time" jdbcType="TIMESTAMP" property="applyTime" />
+    <result column="apply_id" jdbcType="VARCHAR" property="applyId" />
+    <result column="apply_status" jdbcType="INTEGER" property="applyStatus" />
+    <result column="delete_flag" jdbcType="INTEGER" property="deleteFlag" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="org.nz.springall_start_demo.pojo.SoftwareApply">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="attachment" jdbcType="LONGVARCHAR" property="attachment" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, version, serial_number, name, software_category, planning_type, planning_remark, 
+    estimated_cost, realize_method, purchase_method, purchase_details, apply_time, apply_id, 
+    apply_status, delete_flag
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    attachment
+  </sql>
+</mapper>

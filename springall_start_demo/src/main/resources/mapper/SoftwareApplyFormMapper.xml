@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.nz.springall_start_demo.mapper.SoftwareApplyFormMapper">
+  <resultMap id="BaseResultMap" type="org.nz.springall_start_demo.pojo.SoftwareApplyForm">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="apply_form_status" jdbcType="INTEGER" property="applyFormStatus" />
+    <result column="reason" jdbcType="VARCHAR" property="reason" />
+    <result column="function_environment" jdbcType="VARCHAR" property="functionEnvironment" />
+    <result column="providedpt_authenticatedpt" jdbcType="VARCHAR" property="providedptAuthenticatedpt" />
+    <result column="cost_paytype" jdbcType="VARCHAR" property="costPaytype" />
+    <result column="purchase_method" jdbcType="VARCHAR" property="purchaseMethod" />
+    <result column="realize_method" jdbcType="VARCHAR" property="realizeMethod" />
+    <result column="planning_type" jdbcType="VARCHAR" property="planningType" />
+    <result column="software_category" jdbcType="VARCHAR" property="softwareCategory" />
+    <result column="delete_flag" jdbcType="INTEGER" property="deleteFlag" />
+    <result column="serial_number" jdbcType="VARCHAR" property="serialNumber" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, version, apply_form_status, reason, function_environment, providedpt_authenticatedpt, 
+    cost_paytype, purchase_method, realize_method, planning_type, software_category, 
+    delete_flag, serial_number
+  </sql>
+</mapper>
